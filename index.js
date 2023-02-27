@@ -2,19 +2,75 @@ const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
-console.log(inquirer)
+
 // array of questions for user
 const questions = [
+{
+    type: `input`,
+    name: `title`,
+    message: `what is the name of your project`
+},
+{
+    type: `input`,
+    name: `description`,
+    message: `describe your project`
+},
+
+{
+    type: `input`,
+    name: `email`,
+    message: `enter your email address`
+},
+
+{
+    type: `input`,
+    name: `github`,
+    message: `enter your github username`
+},
+
+{
+    type: `input`,
+    name: `instalation`,
+    message: `please state any installation instruction if any`
+},
+
+{
+    type: `input`,
+    name: `usage`,
+    message: `please state how to use the repo`
+},
+{
+    type: `input`,
+    name: `contibution`,
+    message: `please state any contribution that the user needs to know about`
+},
+
+{
+    type: `list`,
+    name: `license?`,
+    message: `what type of license do you prefere`,
+    choice: ["ISC", "APACHE", "GPL", "MIT"]
+
+    
+   
+},
+
+
 
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName),data);
 }
+
 
 // function to initialize program
 function init() {
-
+inquirer.prompt(questions).then((response) => {
+    console.log(`generating README...`);
+    witeTo
+})
 }
 
 // function call to initialize program
