@@ -8,7 +8,7 @@ const questions = [
 {
     type: `input`,
     name: `title`,
-    message: `what is the name of your project`
+    message: `what is the name of your project:`
 },
 {
     type: `input`,
@@ -19,41 +19,43 @@ const questions = [
 {
     type: `input`,
     name: `email`,
-    message: `enter your email address`
+    message: `enter your email address:`
 },
 
 {
     type: `input`,
     name: `github`,
-    message: `enter your github username`
+    message: `enter your github username:`
 },
 
 {
     type: `input`,
     name: `instalation`,
-    message: `please state any installation instruction if any`
+    message: `please state any installation instruction if any:`
 },
 
 {
     type: `input`,
     name: `usage`,
-    message: `please state how to use the repo`
-},
-{
-    type: `input`,
-    name: `contibution`,
-    message: `please state any contribution that the user needs to know about`
+    message: `please state how to use the repo:`
 },
 
 {
     type: `list`,
     name: `license?`,
-    message: `what type of license do you prefere`,
-    choice: ["ISC", "APACHE", "GPL", "MIT"]
+    message: `what type of license do you prefere:`,
+    choices: ["ISC", "APACHE", "GPL", "MIT"]
 
     
    
 },
+
+{
+    type: `input`,
+    name: `contibution`,
+    message: `Enter contribution guideline if any:`
+},
+
 
 
 
@@ -68,7 +70,8 @@ function writeToFile(fileName, data) {
 // function to initialize program
 function init() {
 inquirer.prompt(questions).then((response) => {
-    console.log(`generating simple README...`);
+    console.log(`generating simple
+     README...`);
     writeToFile(`README.md`, generateMarkdown({...response}))
 })
 }
