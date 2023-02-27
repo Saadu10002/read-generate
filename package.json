@@ -1,13 +1,13 @@
 {
-  "name": "static-site",
+  "name": "readme-generate",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a README file generator created from commad line.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Fatima Saadu",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "^8.2.5"
   }
