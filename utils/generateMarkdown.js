@@ -9,7 +9,12 @@ function renderingLicenseBadge(license) {
   }
   return``;
 }
-
+// Function to return the license badge link
+function renderLicenseLink() {
+  if (license!== `none`) {
+    return
+  }
+}
 function generateMarkdown(data) {
   return `# ${data.title}
 

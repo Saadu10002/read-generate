@@ -44,7 +44,12 @@ const questions = [
     type: `list`,
     name: `license?`,
     message: `what type of license do you prefere:`,
-    choices: ["ISC", "APACHE", "GPL", "MIT"]
+    choices: [
+        "ISC",
+        "APACHE",
+        "GPL",
+        "MIT"
+]
 
     
    
