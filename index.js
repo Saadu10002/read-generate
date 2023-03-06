@@ -46,7 +46,7 @@ const questions = [
     message: `what type of license do you prefere:`,
     choices: [
         "ISC",
-        "APACHE",
+        "APACHE 2.0",
         "GPL",
         "MIT"
 ]
@@ -68,17 +68,19 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(), fileName),data);
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
 
 // function to initialize program
-function init() {
-inquirer.prompt(questions).then(function (data) {
-    var fileName = `README.md`;
-    writeToFile(fileName, data)
-});
-}
+function init () {
+inquirer.prompt(questions).then(function(data) {
+    console.log("generating Markdown...");
+    writeToFile("README.md",generateMarkdown({...data}));
+})
 
-// function call to initialize program
+
+}
 init();
+
+
